@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo flexbox</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #f7f7f7;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        hr {
+            border: 1px solid #ddd; 
+            margin: 40px 0;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .flex-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            width: 100%;
+            max-width: 600px;
+            background: #eee;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .flex-item {
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .item-1 { background: #3498db; }
+        .item-2 { background: #e74c3c; }
+        .item-3 { background: #2ecc71; }
+
+        .linha-vermelha {
+            display: flex;
+            gap: 4px;
+            background: #1a1a2e;
+            justify-content: center;
+            padding: 20px;
+            border-radius: 8px;
+            width: fit-content;
+        }
+
+        .linha-vermelha div {
+            width: 60px;
+            height: 60px;
+            background: #e74c3c;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .area-quadrados {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            background: #1a1a2e;
+            padding: 20px;
+            border-radius: 8px;
+            width: fit-content;
+        }
+
+        .linha2, .linha3, .linha4, .linha5 {
+            display: flex;
+            gap: 4px;
+            justify-content: flex-start;
+        }
+
+        .linha2 div, .linha3 div, .linha4 div, .linha5 div {
+            width: 60px;
+            height: 60px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .linha2 div { background: #ca2815; }
+        .linha3 div { background: #e7d63c; }
+        .linha4 div { background: #23c70d; }
+        .linha5 div { background: #0d92c7ec; }
+
+        .container-exercicio3, .container-exercicio4 {
+            display: flex;
+            align-items: stretch; 
+            width: fit-content;
+        }
+
+        .container-exercicio3 .area-quadrados, 
+        .container-exercicio4 .area-quadrados {
+            border-radius: 8px 0 0 8px;
+        }
+
+        .placar {
+            width: 160px; 
+            background: #151526;
+            color: #eee;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .texto-proximo {
+            margin-top: 15px;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #bbb;
+        }
+
+        .mini-linha-roxo {
+            display: flex;
+            gap: 4px;
+            justify-content: center;
+        }
+
+        .mini-linha-roxo div {
+            width: 25px;
+            height: 25px;
+            background: #9b59b6; 
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="flex-container">
+        <div class="flex-item item-1">1</div>
+        <div class="flex-item item-2">2</div>
+        <div class="flex-item item-3">3</div>
+    </div>
+
+    <h1>Exercício 1</h1>
+    <div class="linha-vermelha">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+     
+    <hr>
+
+    <h1>Exercício 2</h1>
+    <div class="area-quadrados">
+        <div class="linha2">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="linha3">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="linha4">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="linha5">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <hr>
+
+    <h1>Exercício 3</h1>
+    <div class="container-exercicio3">
+        
+        <div class="area-quadrados">
+            <div class="linha2"><div></div><div></div><div></div><div></div></div>
+            <div class="linha3"><div></div><div></div><div></div><div></div></div>
+            <div class="linha4"><div></div><div></div><div></div><div></div></div>
+            <div class="linha5"><div></div><div></div><div></div><div></div></div>
+        </div>
+
+        <div class="placar">
+            <h3>Placar</h3>
+            <p id="pontos" style="font-size:2rem; font-weight: bold; color: #e7d63c; margin: 0;">6700</p>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <h1>Exercício 4</h1>
+    <div class="container-exercicio4">
+        
+        <div class="area-quadrados">
+            <div class="linha2">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="linha3">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="linha4">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="linha5">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+        <div class="placar">
+            <h3>Placar</h3>
+            <p id="pontos-e4" style="font-size:2rem; font-weight: bold; color: #e7d63c; margin: 0;">6700</p>
+            
+            <div class="texto-proximo">Próximo</div>
+            <div class="mini-linha-roxo">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
