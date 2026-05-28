@@ -1,0 +1,12 @@
+body {
+    display: flex; justify-content: center; padding: 20px; font-family: sans-serif; background-color: #e2e8f0;
+
+    .grelha {
+    display: grid;
+        gap: 10px;
+        grid-template-columns: 1fr, 2fr;
+
+    }
+    
+    .caixa { width: 80px; height: 80px; background: #3b82f6; border-radius: 8px; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;}
+}

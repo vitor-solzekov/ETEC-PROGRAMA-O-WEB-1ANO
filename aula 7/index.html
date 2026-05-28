@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aula 7</title>
+
+<body>
+    <!-- CSS INTERNO: Estilos definidos dentro da tag style no head -->
+    <style>
+        .texto-azul {
+            color: blue; 
+        }
+        body {
+             background-color: #e0f7fa; 
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 {
+            color: navy; 
+            text-align: center; /* centraliza o texto */
+            text-transform: uppercase;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 12px;
+            border: 0.5px solid navy;
+            margin: 20px auto;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+        }
+
+        #destaque {
+            color: crimson;
+            font-weight: bold;
+            text-decoration: underline;
+        
+
+        }
+
+        p {
+            line-height: 1.6;
+        }
+        
+    </style>
+</head>
+
+<h1>Iniciando no Mundo Visual</h1>
+<!-- elemento que recebe a classe card -->
+    <div class="card">
+    <p class=texto-azul> Este é um cartão estilizado com classe</p>
+    <!-- Elemento com ID unico -->
+    <p id="destaque" class="texto-azul">eu sou um texto de destaque unico</p>
+    </div>
+
+
+<!-- CSS INLINE: estilo direto na tag (usar com moderaçãp) -->
+ <p style="text-align: center; color; gray;">
+    texto centralizado via CSS Inline
+
+    <div class="card">
+    <p>Este é um cartão estilizado com classe</p>
+    <!-- Elemento com ID unico -->
+    <p id="destaque2" class="texto-azul">eu sou um texto de destaque unico</p>
+    </div>
+
+ </p>
+ </body>
+</html>

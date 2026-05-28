@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo flexbox</title>
+     <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #f7f7f7;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        .flex-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            background: #eee;
+            border-radius: 10px;
+            width: 300px;
+        }
+
+        .flex-item {
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .item-1 { background: #3498db;}
+        .item-2 {background: #e74c3c;}
+        .item-3 {background: #2ecc71;}
+
+        .jogo-container {
+            background: #1a1a2e;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            width: fit-content;
+            border-radius: 4px;
+        }
+
+        .linha, .linha2, .linha3, .linha4, .linha5 {
+            display: flex;
+            gap: 4px;
+            justify-content: center;
+        }
+
+        .jogo-container div div {
+            width: 60px;
+            height: 60px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-sizing: border-box;
+        }
+
+        .linha div  { background: #e74c3c; }
+        .linha2 div { background: #ca2815; }
+        .linha3 div { background: #e7d63c; }
+        .linha4 div { background: #23c70d; }
+        .linha5 div { background: #0d92c7ec; }
+
+        .placar {
+            width: 120px;
+            background: #1a1a2e;
+            color: #eee;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #3498db;
+            text-align: center;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .container-blocos {
+            display: flex;
+            gap: 5px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .bloco-roxo {
+            width: 20px;
+            height: 20px;
+            background: #8e44ad;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+        }
+     </style>
+</head>
+<body>
+
+    <div class="flex-container">
+        <div class="flex-item item-1">1</div>
+        <div class="flex-item item-2">2</div>
+        <div class="flex-item item-3">3</div>
+    </div>
+
+    <br>
+
+    <div class="jogo-container">
+        <div class="linha">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <h1>exercicio 1</h1>
+    <div class="jogo-container">
+        <div class="linha2">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <h1>exercicio 2</h1>
+    <div class="jogo-container">
+        <div class="linha2"><div></div><div></div><div></div><div></div></div>
+        <div class="linha3"><div></div><div></div><div></div><div></div></div>
+        <div class="linha4"><div></div><div></div><div></div><div></div></div>
+        <div class="linha5"><div></div><div></div><div></div><div></div></div>
+    </div>
+
+    <h1>exercicio 3</h1>
+    <div class="jogo-container">
+        <div class="linha2"><div></div><div></div><div></div><div></div></div>
+        <div class="linha3"><div></div><div></div><div></div><div></div></div>
+        <div class="linha4"><div></div><div></div><div></div><div></div></div>
+        <div class="linha5"><div></div><div></div><div></div><div></div></div>
+    </div>
+
+    <div class="placar">
+        <h3>Placar</h3>
+        <p id="pontos" style="font-size:2rem; font-weight: bold; color: #e7d63c; margin: 5px 0;">0</p>
+    </div>
+
+    <h1>exercicio 4</h1>
+    
+    <div class="jogo-container">
+        <div class="linha2">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div></div>
+        <div class="linha3"><div></div><div></div><div></div><div></div></div>
+        <div class="linha4"><div></div><div></div><div></div><div></div></div>
+        <div class="linha5"><div></div><div></div><div></div><div></div></div>
+    </div>
+
+    <div class="placar">
+        <h3>Placar</h3>
+        <p id="pontos4" style="font-size:2rem; font-weight: bold; color: #e7d63c; margin: 5px 0 20px 0;">0</p>
+        
+        <h3>Próximo</h3>
+        <div class="container-blocos">
+            <div class="bloco-roxo"></div>
+            <div class="bloco-roxo"></div>
+            <div class="bloco-roxo"></div>
+            <div class="bloco-roxo"></div>
+        </div>
+    </div>
+
+</body>
+</html>

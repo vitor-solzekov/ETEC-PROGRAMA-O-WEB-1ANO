@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 4 - Tabela de Atributos</title>
+    <link rel="styleheet" href="style.css">
+</head>
+
+<body></body>
+
+
+    <h1 id="main-title">Relatório Financeiro Q1</h1>
+
+    <p class="text-highlight">Abaixo apresentamos os dados oficiais do primeiro trimestre</p>
+
+
+    <table border="1" id="sales-table">
+
+        <!-- thead: Define o cabeçalho (titulo da coluna) -->
+        <thead>
+            <tr>
+                <!-- th: Célula do cabeçalho (título da coluna) -->
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Preço Unitário</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+
+        <!-- tbody: Onde os dados reais são inseridos -->
+        <tbody>
+            <!-- Linha 1 -->
+            <tr class="row-item">
+                <td>Notebook Pro 2026</td>
+                <td>10</td>
+                <td>1.200,00$</td>
+                <td>12.000,00$</td>
+            </tr>
+            <!-- linha 2 -->
+            <tr class="row-item">
+                <td>Monitor 4K curved</td>
+                <td>05</td>
+                <td>450,00$</td>
+                <td>2.250,00$</td>
+            </tr>
+
+
+            </tr>
+            <!-- Linha 3 -->
+            <tr class="row-item">
+                <td>Teclado Mecanico RGB</td>
+                <td>20</td>
+                <td>80$</td>
+                <td>1600$</td>
+
+            </tr>
+        </tbody>
+
+
+        <!-- tfoot: rodapé para somatórias ou notas -->
+        <tfoot>
+            <tr>
+                <!-- colspan: Faz esta célula ocupar o espaço de 3 colunas -->
+                <td colspan="3"><strong>Faturamento bruto</strong></td>
+                <td><strong>15.850,00$</strong></td>
+        </tfoot>
+    </table>
+    <!-- Atributo "title": mostra uma dica ao passar o mouse -->
+    <p title="Última atualização: 18 de fevereiro de 2026">
+        Passe o mouse aqui para ver a data da ultima revisão.
+    </p id="footer-note">
+
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+body {
+
+ background-color: rgb(223, 38, 93);
+ font-family: Arial;
+ display: grid;
+ justify-content: center;
+}
+
+.row-item {
+    color: beige;
+}

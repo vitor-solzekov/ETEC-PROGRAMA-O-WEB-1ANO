@@ -1,0 +1,8 @@
+body {padding: 20px; font-family: sans-serif; background: #f1f5f9;}
+
+.galeria {
+    display:grid;
+    grid-template-rows: repeat(3, minmax(200, 1fr));
+    gap: 16px;
+}
+.card {height: 100px; background: #8b5cf6; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.6);}

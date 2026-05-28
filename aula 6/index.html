@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#" method="post">
+
+        <fieldset>
+
+            <!-- LEGEND; O título que fica na borda do agrupamento -->
+            <legend>Escolha seu plano de subscrição</legend>
+
+            <!-- Radio: apenas um pode ser escolhído. Note 'nome' identico -->
+            <input type="radio" id="plano-basico" name="plano" value="basico" checked>
+            <label for="plano-basico">Básico (Gratuido)</label><br>
+
+            <input type="radio" id="plano-premium" name="plano" value="Premium">
+            <label for="plano-premium">Premium (10,00$/mês)</label><br>
+
+            <input type="radio" id="plano-empresarial" name="plano" value="Empresarial">
+            <label for="plano-empresarial">Empresarial (49,99$/mês)</label>
+        </fieldset>
+
+
+
+        <br>
+
+        <fieldset>
+            <legend>Interesses Técnicos (Marque todos que desejar)</legend>
+
+            <!-- CHECKBOX: permite multiplas seleções independentes -->
+            <input type="checkbox" id="html" name="interesse" value="html">
+            <label for="html">HTML5 Semântico</label><br>
+
+            <input type="checkbox" id="css" name="interesse" value="css">
+            <label for="css">CSS3 Avançado</label><br>
+
+            <input type="checkbox" id="javascript" name="interesse" value="javascript">
+            <label for="javascript">JavaScript</label><br>
+
+            <input type="checkbox" id="ui/uix" name="interesse" value="ui/uix">
+            <label for="ui/uix">Design UI/UIX</label>
+        </fieldset>
+
+        <br>
+
+        <!-- Select: menu suspenso para escolha de cada um na lista -->
+        <label for="pais">País da Residência</label><br>
+        <select id="pais" name="nacionalidade">
+            <option value="pt" selected>Portugal</option>
+            <option value="br">Brasil</option>
+            <option value="ao">Angola</option><br>
+            </select>
+
+
+        <br>
+            <label for="cidade">Selecione a sua Cidade</label><br>
+        <select id="cidade" name="sua cidade">
+            <option value="SP" selected>São Paulo</option>
+            <option value="IT" selected>Itapetininga</option>
+             <option value="SB" selected>Sorocaba</option>
+        </select>
+
+             
+        
+        <br></br>
+
+        <!-- TEXTAREA: Área para textos Longos (row define a altura inicial) -->
+        <label for="bio">Conte-nos um pouco sobre a sua experiencia:</label><br>
+        <textarea id="bio" name="mensagem" row="5" cols="40" maxlength="200"></textarea><br>
+         <label for="bio">Informações do perfil:</label><br>
+        <textarea id="bio" name="mensagem" row="5" cols="40" maxlength="200"></textarea>
+        
+
+        <br><br>
+
+        <button type="submit">Submeter pedido</button>
+
+    </form>
+
+</body>
+
+</html>
