@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Pokémon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="painel">
+
+        <h1>Cadastre seu Pokémon</h1>
+
+        <form action="#" method="post" id="IdFormulario">
+
+            <div class="campo">
+                <label for="nome">Pokémon</label>
+                <input type="text" id="nome" placeholder="Pikachu">
+            </div>
+
+            <div class="campo">
+                <label for="IDtipo">Tipo</label>
+                <input type="text" id="IDtipo" placeholder="Elétrico">
+            </div>
+
+            <div class="campo">
+                <label for="IDcp">Combat Power (CP)</label>
+                <input type="number" id="IDcp" placeholder="2500">
+            </div>
+
+            <div class="campo">
+                <label for="IDtreinador">Treinador</label>
+                <input type="text" id="IDtreinador" placeholder="Ash Ketchum">
+            </div>
+
+            <!-- Mantidos para o JavaScript funcionar -->
+            <input type="hidden" id="IDnivel" value="101">
+            <input type="hidden" id="IDUrl">
+
+            <div class="botoes">
+                <button type="submit" id="botao">💾 Cadastrar</button>
+                <button type="reset" id="botaolimpar">✕ Cancelar</button>
+            </div>
+
+        </form>
+
+        <div id="lista-cards" class="lista-card"></div>
+
+        <p id="IdFeedback"></p>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
