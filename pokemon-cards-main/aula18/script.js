@@ -24,6 +24,8 @@ const listaCards = document.querySelector('#lista-cards');
 
 let pokemonsNaArena = [];
 
+const API_BASE_URL = 'http://localhost:3002';
+
 async function buscarDadosPokemon(nome) {
     try {
         const resposta = await fetch(`https://pokeapi.co/api/v2/pokemon/${nome.toLowerCase()}`);
@@ -160,12 +162,66 @@ async function preencherCamposAutomaticos() {
 inputNome.addEventListener('blur', preencherCamposAutomaticos);
 inputNome.addEventListener('change', preencherCamposAutomaticos);
 
-listaCards.addEventListener('click', (event) => {
+async function carregarBaralhoDoBanco() {
+    try {
+        const resposta = await fetch(`${API_BASE_URL}/api/baralho`);
+
+        if (!resposta.ok) {
+            feedback.textContent = '⚠️ Não foi possível carregar o baralho do banco.';
+            feedback.style.color = 'red';
+            return;
+        }
+
+        const linhas = await resposta.json();
+
+        pokemonsNaArena = await Promise.all(linhas.map(async pokemon => {
+            let tipos = [pokemon.tipo1, pokemon.tipo2].filter(tipo => tipo);
+
+            if (tipos.length === 0) {
+                const dadosApi = await buscarDadosPokemon(pokemon.nome);
+                tipos = dadosApi ? extrairTipoPokemon(dadosApi) : [];
+            }
+
+            return {
+                id: pokemon.id,
+                nome: pokemon.nome,
+                imagem: pokemon.img,
+                tipos,
+                cp: pokemon.cp,
+                treinador: pokemon.treinador
+            };
+        }));
+
+        renderizarArena();
+    } catch (erro) {
+        feedback.textContent = '⚠️ Servidor indisponível.';
+        feedback.style.color = 'red';
+    }
+}
+
+listaCards.addEventListener('click', async (event) => {
     if (event.target.classList.contains('btn-remover')) {
         const nomeRemover = event.target.getAttribute('data-nome');
-        
-        pokemonsNaArena = pokemonsNaArena.filter(p => p.nome.toLowerCase() !== nomeRemover.toLowerCase());
-        renderizarArena();
+
+        try {
+            const resposta = await fetch(`${API_BASE_URL}/api/baralho/${encodeURIComponent(nomeRemover)}`, {
+                method: 'DELETE'
+            });
+
+            if (!resposta.ok) {
+                feedback.textContent = '❌ Não foi possível remover o Pokémon.';
+                feedback.style.color = 'red';
+                return;
+            }
+
+            pokemonsNaArena = pokemonsNaArena.filter(p => p.nome.toLowerCase() !== nomeRemover.toLowerCase());
+            renderizarArena();
+            feedback.textContent = '✅ Pokémon removido.';
+            feedback.style.color = 'green';
+        } catch (erro) {
+            feedback.textContent = '⚠️ Não foi possível conectar ao servidor.';
+            feedback.style.color = 'red';
+        }
     }
 });
 
@@ -203,21 +259,51 @@ form.addEventListener('submit', async (e) => {
     const tipos = extrairTipoPokemon(dadosApi);
     const cp = extrairCombatPower(dadosApi);
 
-    pokemonsNaArena.push({
-        nome: dadosApi.name,
-        imagem: imagem,
-        tipos: tipos,
-        cp: cp,
-        treinador: treinadorInput
-    });
+    try {
+        const resposta = await fetch(`${API_BASE_URL}/api/baralho`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                id: dadosApi.id,
+                nome: dadosApi.name,
+                imagem,
+                tipos,
+                cp,
+                treinador: treinadorInput
+            })
+        });
 
-    renderizarArena();
+        const resultado = await resposta.json();
 
-    feedback.textContent = '✅ Pokémon cadastrado com sucesso!';
-    feedback.style.color = 'green';
+        if (!resposta.ok) {
+            feedback.textContent = `❌ ${resultado.erro || 'Não foi possível cadastrar o Pokémon.'}`;
+            feedback.style.color = 'red';
+            return;
+        }
+
+        pokemonsNaArena.push({
+            id: resultado.id,
+            nome: dadosApi.name,
+            imagem,
+            tipos,
+            cp,
+            treinador: treinadorInput
+        });
+
+        renderizarArena();
+
+        feedback.textContent = '✅ Pokémon cadastrado com sucesso!';
+        feedback.style.color = 'green';
+    } catch (erro) {
+        feedback.textContent = '⚠️ Não foi possível conectar ao servidor.';
+        feedback.style.color = 'red';
+        return;
+    }
 
     inputNome.value = '';
     inputTreinador.value = '';
     inputTipo.value = '';
     inputCp.value = '';
 });
+
+carregarBaralhoDoBanco();

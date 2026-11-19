@@ -1,0 +1,16 @@
+{
+  "name": "aula18",
+  "version": "1.0.0",
+  "description": "Baralho Pokemon",
+  "license": "ISC",
+  "author": "Vitor",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.9"
+  }
+}

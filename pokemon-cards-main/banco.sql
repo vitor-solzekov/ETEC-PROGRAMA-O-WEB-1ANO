@@ -1,0 +1,9 @@
+CREATE TABLE baralho (
+id INT PRIMARY KEY,
+nome VARCHAR(50) NOT NULL,
+img TEXT NOT NULL,
+cp INT NOT NULL,
+treinador VARCHAR(100) NOT NULL,
+tipo1 VARCHAR(20),
+tipo2 VARCHAR(20)
+);

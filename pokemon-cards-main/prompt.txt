@@ -1,0 +1,5 @@
+prompt usado na ia do vs code:
+
+a partir da interfaçe, como posso ligar o cadastro dos pokemons no banco de dados?
+-------------------------------
+agora eu coloque pra salvar o tipo do pokemon no banco de dados. ja que quando eu resetava a pagina, a cor do card ficava cinza porque o tipo do pokemon registrado não era salvo na hora

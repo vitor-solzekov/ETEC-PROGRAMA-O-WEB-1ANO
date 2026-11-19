@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../Nova pasta"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "pokemon-cards-main"
+	}
+}
